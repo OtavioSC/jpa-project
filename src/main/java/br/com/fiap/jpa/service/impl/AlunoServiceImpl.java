@@ -45,45 +45,6 @@ public class AlunoServiceImpl extends GenericService<Aluno, Long> {
 		}
 	}
 	
-	/**
-	 * Método para associar um aluno a um curso no relacionamento ManyToMany simples
-	 * 
-	 */
-	/*
-	public void matricular(Long idAluno, Long idCurso) {
-		try {
-			Aluno aluno = obter(idAluno);
-			Curso curso = cursoDAO.obterPorId(idCurso, getEntityManager());
-			
-			List<Curso> cursos = aluno.getCursos();
-			Boolean matriculado = false;
-			
-			if (cursos == null) {
-				cursos = new ArrayList<Curso>();
-			} else {
-				for (Curso cursoDB : cursos) {
-					if (cursoDB.getId().equals(idCurso)) {
-						matriculado = true;
-						break;
-					}
-				}
-			}
-			
-			if (!matriculado) {
-				cursos.add(curso);
-				aluno.setCursos(cursos);
-				alunoDAO.atualizar(aluno, getEntityManager());
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			getEntityManager().getTransaction().rollback();
-		} finally {
-			closeEntityManager();
-		}
-	}
-	*/
-	
 	public void inserirComEndereco(Aluno aluno, Endereco endereco) {
 		try {
 			alunoDAO.salvar(aluno, getEntityManager());
