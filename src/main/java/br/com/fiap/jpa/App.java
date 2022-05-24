@@ -11,8 +11,6 @@ import br.com.fiap.jpa.service.impl.MatriculaServiceImpl;
 public class App {
 
 	public static void main(String[] args) {
-		
-		//Instanciando service para executar opera√ß√µes na entidade Aluno
 		AlunoServiceImpl alunoService = AlunoServiceImpl.getInstance();
 		
 		CursoServiceImpl cursoService = CursoServiceImpl.getInstance();
@@ -35,7 +33,7 @@ public class App {
 		
 		alunoService.listarPorCurso(1L).forEach(System.out::println);
 		
-		System.out.println("============ Listar dados b·sicos dos alunos ==============");
+		System.out.println("============ Listar dados b√°sicos dos alunos ==============");
 		
 		alunoService.listarDadosBasicos().forEach(System.out::println);
 		
@@ -43,11 +41,11 @@ public class App {
 		
 		matriculaService.listarAlunosCursos().forEach(System.out::println);
 		
-		System.out.println("============ Listar p·gina 1 de alunos ==============");
+		System.out.println("============ Listar p√°gina 1 de alunos ==============");
 		
 		alunoService.listarPaginado(1).forEach(System.out::println);
 		
-		System.out.println("============ Listar p·gina 2 de alunos ==============");
+		System.out.println("============ Listar p√°gina 2 de alunos ==============");
 		
 		alunoService.listarPaginado(2).forEach(System.out::println);
 		
@@ -55,7 +53,7 @@ public class App {
 		
 		matriculaService.contarPorCurso().forEach(System.out::println);
 		
-		System.out.println("============ Listar Disciplinas por carga hor·ria ==========");
+		System.out.println("============ Listar Disciplinas por carga hor√°ria ==========");
 		
 		disciplinaService.listarPorCargaHoraria(70).forEach(System.out::println);
 		
